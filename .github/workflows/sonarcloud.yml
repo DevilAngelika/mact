@@ -22,7 +22,7 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-suggest --no-scripts --no-interaction
 
       - name: Run test
-        run: XDEBUG_MODE=coverage php vendor/bin/phpunit  --coverage-clover var/reports/tests/coverage-phpunit.xml --log-junit var/reports/junit.xml
+        run: XDEBUG_MODE=coverage APP_ENV=test php vendor/bin/phpunit  --coverage-clover var/reports/tests/coverage-phpunit.xml --log-junit var/reports/junit.xml
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
